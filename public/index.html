@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sentiment Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">🧠 Sentiment Analyzer</div>
+    <div class="nav-subtitle">AI-Powered Text Analysis</div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Input Section -->
+    <div class="card input-card">
+      <h2>Analyze Your Text</h2>
+      <p class="subtitle">Enter any text to detect its sentiment</p>
+      <textarea id="textInput" placeholder="Type or paste your text here...&#10;&#10;Example: I love this product! It is amazing!"></textarea>
+      <div class="btn-group">
+        <button onclick="analyzeText()" class="btn btn-primary">🔍 Analyze Sentiment</button>
+        <button onclick="clearInput()" class="btn btn-secondary">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="card result-card" id="resultCard" style="display:none;">
+      <h2>Analysis Result</h2>
+      <div class="result-box" id="resultBox">
+        <div class="emoji" id="resultEmoji"></div>
+        <div class="sentiment-label" id="resultSentiment"></div>
+        <div class="score-info">
+          <span class="score-badge" id="resultScore"></span>
+          <span class="percentage-badge" id="resultPercentage"></span>
+        </div>
+        <div class="result-text" id="resultText"></div>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading" style="display:none;">
+      <div class="spinner"></div>
+      <p>Analyzing sentiment...</p>
+    </div>
+
+    <!-- Error -->
+    <div class="error-box" id="errorBox" style="display:none;">
+      <span id="errorMsg"></span>
+    </div>
+
+    <!-- History Section -->
+    <div class="card history-card">
+      <div class="history-header">
+        <h2>📋 Analysis History</h2>
+        <button onclick="clearHistory()" class="btn btn-danger">🗑️ Clear All</button>
+      </div>
+      <div id="historyContainer">
+        <p class="no-history">No analysis history yet. Analyze some text to get started!</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Sentiment Analyzer | Built with Node.js, Express.js & MongoDB | 2025-2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
